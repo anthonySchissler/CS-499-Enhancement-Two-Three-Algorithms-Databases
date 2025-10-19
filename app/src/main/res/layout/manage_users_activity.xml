@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".EditUserActivity">
+
+        <TextView
+            android:id="@+id/userAndPermissionText"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="35dp"
+            android:singleLine="true"
+            android:text="Username: (username) | Permission: (permission)"
+            android:background="@drawable/border_bottom"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/homeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="34dp"
+            android:text="@string/usersTitle"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Search"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <ListView
+            android:paddingTop="10dp"
+            android:clipToPadding="false"
+            android:id="@+id/userList"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="15dp"
+            tools:listitem="@layout/user_list_item"
+            android:layout_height="0dp"
+            android:background="@color/teal_700"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/NavBar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:menu="@menu/bottom_nav_bar"
+            app:itemIconTint="@color/teal_700"
+            app:itemTextColor="@color/teal_700"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
